@@ -33,6 +33,9 @@ class ApiController extends Controller
 
         return view('tes', $data);
     }
+    public function oke(){
+        return 'ooke';
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/send/{x}/{y}/{z}', 'ApiController@send');
+Route::get('/oke', 'ApiController@oke');
