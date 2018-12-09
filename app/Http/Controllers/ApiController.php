@@ -38,6 +38,12 @@ class ApiController extends Controller
     public function send(){
         return 'ooke';
     }
+    public function send1($s){
+        return '1 titik';
+    }
+    public function send2($e, $w){
+        return '2 titik';
+    }
 
     public function map(){
         return view('map');
