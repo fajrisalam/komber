@@ -23,7 +23,7 @@ createCanvas(240, 240);
 
 function draw(){
     background(img2);
-    image(img, {{ $x * 20 }}, {{ $y * 20 }}, 10, 10);
+    image(img, {{ $x * 20 }}, {{ $y * 20 }}, 50, 50);
 }
 </script>
 </head>
