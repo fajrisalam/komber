@@ -18,7 +18,7 @@ function setup() {
 //   background(50);
 // Top-left corner of the img is at (10, 10)
 // Width and height are 50 x 50
-createCanvas(240, 240);
+createCanvas(220, 220);
 }
 
 function draw(){
