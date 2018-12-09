@@ -28,6 +28,6 @@ function draw(){
 </script>
 </head>
 <body>
-
+	<p>x = {{$x}} y = {{$y}}</p>
 </body>
 </html>
