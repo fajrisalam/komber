@@ -23,11 +23,11 @@ createCanvas(1000, 1000);
 
 function draw(){
     background(img2);
-    image(img, 100, 100, 50, 50);
+    image(img, 0, 0, 50, 50);
 }
 </script>
 </head>
 <body>
-    
+
 </body>
 </html>

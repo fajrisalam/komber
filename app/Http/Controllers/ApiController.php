@@ -16,10 +16,10 @@ class ApiController extends Controller
     {
         //
     }
-    public function send($r1, $r2, $r3){
-        $x1 = 1; $y1 = 2;
-        $x2 = 2; $y2 = 1;
-        $x3 = 1; $y3 = 1;
+    public function sendData($r1, $r2, $r3){
+        $x1 = 0; $y1 = 11;
+        $x2 = 11; $y2 = 11;
+        $x3 = 6; $y3 = 6;
 
         $A = -2*$x1 + 2*$x2;
         $B = -2*$y1 + 2*$y2;
@@ -32,9 +32,15 @@ class ApiController extends Controller
         $data['y'] = ($C*$D - $A*$F) / ($B*$D - $A*$E);
 
         return view('tes', $data);
+        // return view('map', $data);
     }
-    public function oke(){
+
+    public function send(){
         return 'ooke';
+    }
+
+    public function map(){
+        return view('map');
     }
 
     /**
