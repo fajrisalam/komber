@@ -12,7 +12,7 @@
 var img2;
 function preload() {
     img = loadImage('{{ asset('img/icon.png')}}');
-    img2 = loadImage('{{ asset('img/ajk.png')}}');
+    img2 = loadImage('{{ asset('img/ajk_baru.png')}}');
 }
 function setup() {
 //   background(50);
