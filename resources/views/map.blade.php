@@ -18,12 +18,12 @@ function setup() {
 //   background(50);
 // Top-left corner of the img is at (10, 10)
 // Width and height are 50 x 50
-createCanvas(600, 600);
+createCanvas(120, 120);
 }
 
 function draw(){
     background(img2);
-    image(img, {{ $x * 50 }}, {{ $y * 50 }}, 25, 25);
+    image(img, {{ $x * 10 }}, {{ $y * 10 }}, 5, 5);
 }
 </script>
 </head>
