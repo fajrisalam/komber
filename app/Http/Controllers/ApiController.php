@@ -17,8 +17,8 @@ class ApiController extends Controller
         //
     }
     public function sendData($r1, $r2, $r3){
-        $x1 = 0; $y1 = 11;
-        $x2 = 11; $y2 = 11;
+        $x1 = 0; $y1 = 10;
+        $x2 = 10; $y2 = 10;
         $x3 = 6; $y3 = 0;
 
         $A = -2*$x1 + 2*$x2;
