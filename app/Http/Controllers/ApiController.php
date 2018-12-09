@@ -28,8 +28,8 @@ class ApiController extends Controller
         $E = -2*$y2 + 2*$y3;
         $F = $r2*$r2 - $r3*$r3 - $x2*$x2 + $x3*$x3 - $y2*$y2 + $y3*$y3;
 
-        $data['y'] = ($C*$E - $F*$B) / ($E*$A - $B*$D);
-        $data['x'] = ($C*$D - $A*$F) / ($B*$D - $A*$E);
+        $data['x'] = ($C*$E - $F*$B) / ($E*$A - $B*$D);
+        $data['y'] = ($C*$D - $A*$F) / ($B*$D - $A*$E);
 
         // return view('tes', $data);
         return view('map', $data);
