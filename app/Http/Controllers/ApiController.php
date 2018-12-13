@@ -44,7 +44,9 @@ class ApiController extends Controller
     }
 
     public function map(){
-        $data['all_coordinates'] = Coordinates::orderBy('updated_at', 'desc')->take(5)->get();
+        // $data['all_coordinates'] = Coordinates::orderBy('updated_at', 'desc')->take(5)->get();
+        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(1), now()])->orderBy('updated_at', 'desc')->take(5)->get();
+        // $data['all_coordinates'] = $coords;
         // dd($data['all_coordinates'])
         return view('map', $data);
     }
