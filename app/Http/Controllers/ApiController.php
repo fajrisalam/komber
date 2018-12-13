@@ -16,20 +16,10 @@ class ApiController extends Controller
     {
         //
     }
-    public function sendData($r1, $r2, $r3){
-        $x1 = 0; $y1 = 10;
-        $x2 = 10; $y2 = 10;
-        $x3 = 6; $y3 = 0;
-
-        $A = -2*$x1 + 2*$x2;
-        $B = -2*$y1 + 2*$y2;
-        $C = $r1*$r1 - $r2*$r2 - $x1*$x1 + $x2*$x2 - $y1*$y1 + $y2*$y2;
-        $D = -2*$x2 + 2*$x3;
-        $E = -2*$y2 + 2*$y3;
-        $F = $r2*$r2 - $r3*$r3 - $x2*$x2 + $x3*$x3 - $y2*$y2 + $y3*$y3;
-
-        $data['x'] = ($C*$E - $F*$B) / ($E*$A - $B*$D);
-        $data['y'] = ($C*$D - $A*$F) / ($B*$D - $A*$E);
+    public function sendData($user_id, $x, $y){
+        $data['user_id'] = $user_id;
+        $data['x'] = $x;
+        $data['y'] = $y;
 
         // return view('tes', $data);
         return view('map', $data);

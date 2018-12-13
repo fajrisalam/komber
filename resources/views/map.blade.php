@@ -28,6 +28,7 @@ function draw(){
 </script>
 </head>
 <body>
+	<p>user_id = {{$user_id}}</p>
 	<p>x = {{$x}} y = {{$y}}</p>
 </body>
 </html>
