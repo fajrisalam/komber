@@ -19,5 +19,5 @@ Route::get('/{user_id}/{x}/{y}', 'ApiController@sendData');
 // Route::get('/{user_id}/{x}', 'ApiController@send1');
 // Route::get('/{user_id}/{x}/{y}', 'ApiController@send2');
 Route::get('/send', 'ApiController@send');
-Route::get('/map', 'ApiController@map');
+Route::get('/map', 'ApiController@map')->name('map');
 

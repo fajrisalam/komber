@@ -23,12 +23,14 @@ createCanvas(220, 220);
 
 function draw(){
     background(img2);
-    image(img, {{ $x * 20 }}, {{ $y * 20 }}, 50, 50);
+    @foreach($all_coordinates as $coord)
+        image(img, {{ $coord->x * 20 }}, {{ $coord->y * 20 }}, 50, 50);
+    @endforeach
 }
 </script>
 </head>
 <body>
-	<p>user_id = {{$user_id}}</p>
-	<p>x = {{$x}} y = {{$y}}</p>
+{{-- 	<p>user_id = {{$user_id}}</p>
+	<p>x = {{$x}} y = {{$y}}</p> --}}
 </body>
 </html>

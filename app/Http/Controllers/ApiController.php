@@ -4,104 +4,48 @@ namespace App\Http\Controllers;
 
 use App;
 use Illuminate\Http\Request;
+use App\Coordinates;
 
 class ApiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
     public function sendData($user_id, $x, $y){
         $data['user_id'] = $user_id;
         $data['x'] = $x;
         $data['y'] = $y;
+        $exist_coord = Coordinates::where('user_id', $user_id)->get();
+        if(!$exist_coord->isEmpty()){
+            // dd($exist_coord);
+            $exist_coord = Coordinates::find($exist_coord[0]->id);
+            $exist_coord->x = $x;
+            $exist_coord->y = $y;
+            $exist_coord->save();
+        }
+        else {
+            $coord = new Coordinates;
+            $coord->user_id = $user_id;
+            $coord->x = $x;
+            $coord->y = $y;
+            $coord->save();
+        }
 
-        // return view('tes', $data);
-        return view('map', $data);
+        return redirect()->route('map');
     }
 
     public function send(){
         return 'ooke';
     }
+
     public function send1($s){
         return '1 titik';
     }
+
     public function send2($e, $w){
         return '2 titik';
     }
 
     public function map(){
-        return view('map');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function show(c $c)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(c $c)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, c $c)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(c $c)
-    {
-        //
+        $data['all_coordinates'] = Coordinates::orderBy('updated_at', 'desc')->take(5)->get();
+        // dd($data['all_coordinates'])
+        return view('map', $data);
     }
 }
