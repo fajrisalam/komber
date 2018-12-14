@@ -38,8 +38,8 @@
             background(img_bg);
             @foreach($all_coordinates as $key => $coord)
                 image(img[{{$key}}], {{ $coord->x }} * satuan, {{ $coord->y }} * satuan, icon_size, icon_size);
-                fill(65);
-                text("{{$coord->user_id}}", {{$coord->x}} * satuan + icon_size/2, {{$coord->y}} * satuan + icon_size/2);
+                // fill(65);
+                // text("{{$coord->user_id}}", {{$coord->x}} * satuan + icon_size/2, {{$coord->y}} * satuan + icon_size/2);
             @endforeach
         }
     </script>
