@@ -14,7 +14,6 @@ class ApiController extends Controller
         $data['y'] = $y;
         $exist_coord = Coordinates::where('user_id', $user_id)->get();
         if(!$exist_coord->isEmpty()){
-            // dd($exist_coord);
             $exist_coord = Coordinates::find($exist_coord[0]->id);
             $exist_coord->x = $x;
             $exist_coord->y = $y;
@@ -28,26 +27,28 @@ class ApiController extends Controller
             $coord->save();
         }
 
-        return redirect()->route('map');
+        return redirect()->route('map_android');
     }
 
     public function send(){
-        return 'ooke';
+        return 'ok';
     }
 
-    public function send1($s){
-        return '1 titik';
+    public function user_id($user_id){
+        return 'id';
     }
 
-    public function send2($e, $w){
-        return '2 titik';
+    public function x($user_id, $x){
+        return 'id and x';
     }
 
-    public function map(){
-        // $data['all_coordinates'] = Coordinates::orderBy('updated_at', 'desc')->take(5)->get();
+    public function map_android(){
         $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(1), now()])->orderBy('updated_at', 'desc')->take(5)->get();
-        // $data['all_coordinates'] = $coords;
-        // dd($data['all_coordinates'])
-        return view('map', $data);
+        return view('map_android', $data);
+    }
+
+    public function map_desktop(){
+        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(1), now()])->orderBy('updated_at', 'desc')->take(5)->get();
+        return view('map_desktop', $data);
     }
 }

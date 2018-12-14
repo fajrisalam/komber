@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{user_id}/{x}/{y}', 'ApiController@sendData');
-// Route::get('/{user_id}/{x}', 'ApiController@send1');
-// Route::get('/{user_id}/{x}/{y}', 'ApiController@send2');
 Route::get('/send', 'ApiController@send');
-Route::get('/map', 'ApiController@map')->name('map');
-
+Route::get('/map_android', 'ApiController@map_android')->name('map_android');
+Route::get('/map_desktop', 'ApiController@map_desktop')->name('map_desktop');
+Route::get('/{user_id}/{x}/{y}', 'ApiController@sendData');
+Route::get('/{user_id}', 'ApiController@user_id');
+Route::get('/{user_id}/{x}', 'ApiController@x');
