@@ -43,12 +43,12 @@ class ApiController extends Controller
     }
 
     public function map_android(){
-        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(1), now()])->orderBy('updated_at', 'desc')->take(5)->get();
+        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(5), now()])->orderBy('updated_at', 'desc')->take(5)->get();
         return view('map_android', $data);
     }
 
     public function map_desktop(){
-        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(1), now()])->orderBy('updated_at', 'desc')->take(5)->get();
+        $data['all_coordinates'] = Coordinates::whereBetween('updated_at', [now()->subMinutes(5), now()])->orderBy('updated_at', 'desc')->take(5)->get();
         return view('map_desktop', $data);
     }
 }
