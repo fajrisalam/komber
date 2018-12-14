@@ -46,12 +46,12 @@
 </head>
 <body>
     <div id="gambar"></div>
-    <div style="width: 220px;">
+    <div style="width: 400px;">
         <div class="col-md-12">
             @foreach($all_coordinates as $key => $coord)
                 <div class="d-flex flex-row">
                     <div class="col-md-4">
-                        <img src="{{ asset($image_path[$key])}}" width="100%">
+                        <img src="{{ asset($image_path[$key])}}" width="60%">
                     </div>
                     <div class="col-md-8">
                         {{$coord->user_id}}
