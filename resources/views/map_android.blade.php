@@ -50,8 +50,8 @@
         <div class="col-md-12">
             @foreach($all_coordinates as $key => $coord)
                 <div class="d-flex flex-row">
-                    <div class="col-md-4">
-                        <img src="{{ asset($image_path[$key])}}" width="60%">
+                    <div class="col-md-2">
+                        <img src="{{ asset($image_path[$key])}}" width="50vw">
                     </div>
                     <div class="col-md-8">
                         {{$coord->user_id}}
